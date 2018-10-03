@@ -10,13 +10,13 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  region: 'us-west-2'
-  app: 'todo-docker'
-  env: 'TodoDocker-env'
-  bucket_name: 'arn:aws:s3:::elasticbeanstalk-us-west-2-510870579936'
-  bucket_path: 'todo-docker'
+  region: "us-west-2"
+  app: "todo-docker"
+  env: "TodoDocker-env"
+  bucket_name: "elasticbeanstalk-us-west-2-510870579936"
+  bucket_path: "todo-docker"
   on:
     branch: master
-  access_key_id: $aws_id
+  access_key_id: $AWS_KEY_ID
   secret_access_key: 
-    secure: $aws_key
+    secure: $AWS_SECRET
