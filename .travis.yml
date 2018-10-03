@@ -8,7 +8,7 @@ before_install:
 script:
   - docker run romanchitto/docker-appsy npm run test -- --coverage
 
-deployment:
+deploy:
   provider: elasticbeanstalk
   region: 'us-west-2'
   app: 'todo-docker'
