@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run romanchitto/docker-appsy npm run test -- --coverage
+
+deployment:
+  provider: elasticbeanstalk
+  region: 'us-west-2'
+  app: 'todo-docker'
+  env: 'TodoDocker-env'
+  bucket_name: 'arn:aws:s3:::elasticbeanstalk-us-west-2-510870579936'
+  bucket_path: 'todo-docker'
+  on:
+    branch: master
+  access_key_id: $aws_id
+  secret_access_key: 
+    secure: $aws_key
